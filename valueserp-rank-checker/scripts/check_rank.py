@@ -8,17 +8,13 @@ Requires: VALUESERP_API_KEY environment variable
 import argparse
 import json
 import os
-import ssl
 import sys
 import urllib.parse
 import urllib.request
 
 
 def fetch_json(url: str) -> dict:
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
-    with urllib.request.urlopen(url, timeout=30, context=ctx) as response:
+    with urllib.request.urlopen(url, timeout=30) as response:
         return json.loads(response.read().decode())
 
 
