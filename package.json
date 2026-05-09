@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "openclaw": {
+    "extensions": ["./valueserp-rank-checker/SKILL.md"],
     "compat": {
       "pluginApi": ">=2026.3.24-beta.2"
     },
